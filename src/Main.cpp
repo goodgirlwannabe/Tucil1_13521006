@@ -26,6 +26,7 @@ int main() {
         random_input();
     } else {
         cout << "Invalid input\n";
+        main();
     }
 
     return 0;

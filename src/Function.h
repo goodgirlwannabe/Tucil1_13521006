@@ -66,6 +66,7 @@ void bracket(vector <int> arr, char op[]){
                                     ans1 = convert_op(&op[o], convert_op(&op[n], convert_op(&op[m], (float)arr[i], (float)arr[j]), (float)arr[k]), (float)arr[l]);
                                     if(abs(ans1-24) < 0.0001){
                                         hsl = "((" + to_string(arr[i]) + op[m] + to_string(arr[j]) + ")" + op[n] + to_string(arr[k]) + ")" + op[o] + to_string(arr[l]);
+                                        hsl.erase(remove(hsl.begin(), hsl.end(), ' '), hsl.end());
                                         s.push_back(hsl);
                                         count += 1;
                                     }
@@ -73,6 +74,7 @@ void bracket(vector <int> arr, char op[]){
                                     ans2 = convert_op(&op[o], convert_op(&op[m], (float)arr[i], convert_op(&op[n], (float)arr[j], (float)arr[k])), (float)arr[l]);
                                     if(abs(ans2-24) < 0.0001){
                                         hsl = "(" + to_string(arr[i]) + op[m] + "(" + to_string(arr[j]) + op[n] + to_string(arr[k]) + "))" + op[o] + to_string(arr[l]);
+                                        hsl.erase(remove(hsl.begin(), hsl.end(), ' '), hsl.end());
                                         s.push_back(hsl);
                                         count += 1;
                                     }
@@ -80,6 +82,7 @@ void bracket(vector <int> arr, char op[]){
                                     ans3 = convert_op(&op[m], (float)arr[i],convert_op(&op[o], convert_op(&op[n], (float)arr[j], (float)arr[k]), (float)arr[l]));
                                     if(abs(ans3-24) < 0.0001){
                                         hsl = to_string(arr[i]) + op[m] + "((" + to_string(arr[j]) + op[n] + to_string(arr[k]) + ")" + op[o] + to_string(arr[l]) + ")";
+                                        hsl.erase(remove(hsl.begin(), hsl.end(), ' '), hsl.end());
                                         s.push_back(hsl);
                                         count += 1;
                                     }
@@ -87,6 +90,7 @@ void bracket(vector <int> arr, char op[]){
                                     ans4 = convert_op(&op[m], (float)arr[i], convert_op(&op[n], (float)arr[j], convert_op(&op[o], (float)arr[k], (float)arr[l])));
                                     if(abs(ans4-24) < 0.0001){
                                         hsl = to_string(arr[i]) + op[m] + "(" + to_string(arr[j]) + op[n] + "(" + to_string(arr[k]) + op[o] + to_string(arr[l]) + "))";
+                                        hsl.erase(remove(hsl.begin(), hsl.end(), ' '), hsl.end());
                                         s.push_back(hsl);
                                         count += 1;
                                     }
@@ -94,6 +98,7 @@ void bracket(vector <int> arr, char op[]){
                                     ans5 = convert_op(&op[n], convert_op(&op[m], (float)arr[i], (float)arr[j]), convert_op(&op[o], (float)arr[k], (float)arr[l]));
                                     if(abs(ans5-24) < 0.0001){
                                         hsl = "(" + to_string(arr[i]) + op[m] + to_string(arr[j]) + ")" + op[n] + "(" + to_string(arr[k]) + op[o] + to_string(arr[l]) + ")";
+                                        hsl.erase(remove(hsl.begin(), hsl.end(), ' '), hsl.end());
                                         s.push_back(hsl);
                                         count += 1;
                                     }
