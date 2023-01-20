@@ -5,6 +5,7 @@
 #include <string>
 #include <algorithm>
 #include <ctime>
+#include <fstream>
 using namespace std;
 
 string c1, c2, c3, c4;
@@ -118,9 +119,19 @@ void bracket(vector <int> arr, char op[]){
     cout << (end - start) / double(CLOCKS_PER_SEC) << " seconds\n";
 }
 
-
+void save_file(vector <string> s, string file_name){
+    ofstream file("./test/" + file_name + ".txt");
+    file << "There are " <<  s.size() << " solutions\n";
+    file << "--------------------------------------------\n";
+    for (int i = 0; i < s.size(); i++){
+        file << s[i] << endl;
+    }
+    file.close();
+}
 
 void keyboard_input(){
+    string save;
+    string file_name;
     cout << "Cards must be 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, or A\n";
     cout << "Enter 4 cards: ";
     cin >> c1 >> c2 >> c3 >> c4 ;
@@ -143,17 +154,47 @@ void keyboard_input(){
     }
     cout << "Cards: " << val[0] << " " << val[1] << " " << val[2] << " " << val[3] << endl;
     bracket(val, op);
-        // cout << s.size() << " solutions\n";
-        // for (int i = 0; i < s.size(); i++){
-        //     cout << s[i] << endl;}
-
+    cout << "--------------------------------------------\n";
+    cout << "Do you want to save the result to a file? (y/n): ";
+    cin >> save;
+    if (save == "y" || save == "Y"){
+        cout << "Enter file name: ";
+        cin >> file_name;
+        save_file(s, file_name);
+        cout << "Thank you for using this program\n";
+    }
+    else if( save == "n" || save == "N"){
+        cout << "Thank you for using this program\n";
+    }
+    else {
+        cout << "Invalid input\n";
+        cout << "Thank you for using this program\n";
+    }
 }
 
 void random_input(){
+    string save;
+    string file_name;
     srand(time(0));
     for (int i = 0; i < 4; i++){
         val.push_back(rand() % 13 + 1);
     }
     cout << "Cards: " << val[0] << " " << val[1] << " " << val[2] << " " << val[3] << endl;
     bracket(val, op);
+        cout << "--------------------------------------------\n";
+    cout << "Do you want to save the result to a file? (y/n): ";
+    cin >> save;
+    if (save == "y" || save == "Y"){
+        cout << "Enter file name: ";
+        cin >> file_name;
+        save_file(s, file_name);
+        cout << "Thank you for using this program\n";
+    }
+    else if( save == "n" || save == "N"){
+        cout << "Thank you for using this program\n";
+    }
+    else {
+        cout << "Invalid input\n";
+        cout << "Thank you for using this program\n";
+    }
 }
