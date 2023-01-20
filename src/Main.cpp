@@ -17,7 +17,7 @@ int main() {
     cout << "Choose your input:\n";
     cout << "1. Keyboard\n";
     cout << "2. Random\n";
-
+    cout << "Input: ";
     int input;
     cin >> input;
     if (input == 1){
