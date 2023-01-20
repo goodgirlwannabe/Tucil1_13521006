@@ -121,6 +121,7 @@ void bracket(vector <int> arr, char op[]){
 
 void save_file(vector <string> s, string file_name){
     ofstream file("./test/" + file_name + ".txt");
+    file << "Cards: " << val[0] << " " << val[1] << " " << val[2] << " " << val[3] << endl;
     file << "There are " <<  s.size() << " solutions\n";
     file << "--------------------------------------------\n";
     for (int i = 0; i < s.size(); i++){
