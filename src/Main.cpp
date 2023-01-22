@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "Function.cpp"
+#include "Function.h"
 
 int main() {
     cout << "                     __                  ______   __            ___    __ __      " << endl;
