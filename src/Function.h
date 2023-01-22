@@ -167,14 +167,11 @@ void keyboard_input(){
         cout << "Enter file name: ";
         cin >> file_name;
         save_file(s, file_name);
-        cout << "Thank you for using this program\n";
     }
     else if( save == "n" || save == "N"){
-        cout << "Thank you for using this program\n";
     }
     else {
         cout << "Invalid input\n";
-        cout << "Thank you for using this program\n";
     }
 }
 
@@ -194,13 +191,10 @@ void random_input(){
         cout << "Enter file name: ";
         cin >> file_name;
         save_file(s, file_name);
-        cout << "Thank you for using this program\n";
     }
     else if( save == "n" || save == "N"){
-        cout << "Thank you for using this program\n";
     }
     else {
         cout << "Invalid input\n";
-        cout << "Thank you for using this program\n";
     }
 }
